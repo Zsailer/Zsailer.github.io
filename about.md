@@ -4,7 +4,10 @@ title: About
 permalink: /about/
 ---
 
-<img src="../assets/images/me.jpg" align="right">
+<img src="../assets/images/me.png" align="right" width="30%">
 
-My name is Zach. I'm in my fifth year at University of Oregon, studying molecular
-evolution. If you're interested, you can read
+I am physicist, turned software developer, turned evolutionary biologist.
+
+I am currently study protein evolution -- particularly the mechanisms that shape how proteins evolve. My research is motivated by the broad question: *how does a protein's genotype-phenotype map shape its evolution?*
+
+Specifically, I have written a lot about epistasis and how it shapes evolutionary trajectories in protein genotype-phenotype maps. I am also passionate about open and reproducible science. Adjacent to my research, I work hard to develop software that makes reproducibility simple.

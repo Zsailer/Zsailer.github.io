@@ -17,7 +17,7 @@ title: Zachary Sailer
 subtitle: scientist | software developer
 email: zachsailer@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  scientist | software developer
+  Graduate student | Harms Lab | University of Oregon | studying protein evolution | promoting open science | software developer | jupyter
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: zrsailer
@@ -29,7 +29,7 @@ markdown: kramdown
 theme: minima
 sass:
   sass_dir: _sass
-  
+
 plugins:
 #   - jekyll-feed
 
