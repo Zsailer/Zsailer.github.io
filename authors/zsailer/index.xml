@@ -20,5 +20,17 @@
 Thank you to Letitia Portella and Saul Shanabrook for pushing me to make it happened.</description>
     </item>
     
+    <item>
+      <title>Jupyter Team Meeting 2019</title>
+      <link>http://www.example.com/jupyter/jupyter-team-meeting/</link>
+      <pubDate>Sun, 17 Mar 2019 11:30:07 -0700</pubDate>
+      
+      <guid>http://www.example.com/jupyter/jupyter-team-meeting/</guid>
+      <description>&amp;ldquo;If you want to go fast, go alone. If you want to go far, go together.&amp;rdquo;
+ A few weeks ago, I had the opportunity to join many members of the Project Jupyter&amp;rsquo;s core development team in Washington DC for our annual team meeting. A huge thank you to Dr. Lorena Barba for hosting our team at George Washington University for the week.
+This was an incredible experience.
+I counted ~20 core contributors representing 9 different countries in the room.</description>
+    </item>
+    
   </channel>
 </rss>
