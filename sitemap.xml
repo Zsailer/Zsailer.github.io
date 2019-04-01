@@ -9,6 +9,7 @@
   
   <url>
     <loc>http://www.example.com/jupyter/</loc>
+    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
   </url>
   
   <url>
@@ -30,7 +31,8 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/</loc>
+    <loc>http://www.example.com/jupyter/jupyter-team-meeting/</loc>
+    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
   </url>
   
   <url>
@@ -49,6 +51,10 @@
   </url>
   
   <url>
+    <loc>http://www.example.com/search/</loc>
+  </url>
+  
+  <url>
     <loc>http://www.example.com/series/</loc>
     <priority>0</priority>
   </url>
@@ -61,6 +67,18 @@
   <url>
     <loc>http://www.example.com/tags/intro/</loc>
     <lastmod>2019-03-20T17:36:11-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/jupyter/</loc>
+    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/open-source-community/</loc>
+    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
     <priority>0</priority>
   </url>
   

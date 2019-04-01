@@ -18,5 +18,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>jupyter</title>
+      <link>http://www.example.com/tags/jupyter/</link>
+      <pubDate>Sun, 17 Mar 2019 11:30:07 -0700</pubDate>
+      
+      <guid>http://www.example.com/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source community</title>
+      <link>http://www.example.com/tags/open-source-community/</link>
+      <pubDate>Sun, 17 Mar 2019 11:30:07 -0700</pubDate>
+      
+      <guid>http://www.example.com/tags/open-source-community/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
