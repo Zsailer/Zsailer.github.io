@@ -30,12 +30,21 @@
   </url>
   
   <url>
+    <loc>http://www.example.com/</loc>
+  </url>
+  
+  <url>
     <loc>http://www.example.com/authors/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.example.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/page/</loc>
     <priority>0</priority>
   </url>
   
@@ -51,6 +60,12 @@
   
   <url>
     <loc>http://www.example.com/tags/intro/</loc>
+    <lastmod>2019-03-20T17:36:11-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/authors/zsailer/</loc>
     <lastmod>2019-03-20T17:36:11-07:00</lastmod>
     <priority>0</priority>
   </url>

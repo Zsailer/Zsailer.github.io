@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on </title>
-    <link>http://www.example.com/</link>
-    <description>Recent content in Home on </description>
+    <title>zsailer on </title>
+    <link>http://www.example.com/authors/zsailer/</link>
+    <description>Recent content in zsailer on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 20 Mar 2019 17:36:11 -0700</lastBuildDate>
     
-	<atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.example.com/authors/zsailer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       <guid>http://www.example.com/other/first-post/</guid>
       <description>Finally starting a blog.
 Thank you to Letitia Portella and Saul Shanabrook for pushing me to make it happened.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://www.example.com/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.example.com/</guid>
-      <description>type: page layout: search outputs: - html - json</description>
     </item>
     
   </channel>
