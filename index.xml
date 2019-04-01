@@ -5,9 +5,20 @@
     <link>http://www.example.com/</link>
     <description>Recent content in Home on </description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Mar 2019 17:36:11 -0700</lastBuildDate>
     
 	<atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introducing my new blog</title>
+      <link>http://www.example.com/other/first-post/</link>
+      <pubDate>Wed, 20 Mar 2019 17:36:11 -0700</pubDate>
+      
+      <guid>http://www.example.com/other/first-post/</guid>
+      <description>Finally starting a blog.
+Thank you to Letitia Portella and Saul Shanabrook for pushing me to make sure it happened. 😉</description>
+    </item>
     
   </channel>
 </rss>
