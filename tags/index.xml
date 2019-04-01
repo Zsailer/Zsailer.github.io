@@ -10,15 +10,6 @@
     
     
     <item>
-      <title>intro</title>
-      <link>http://www.example.com/tags/intro/</link>
-      <pubDate>Wed, 20 Mar 2019 17:36:11 -0700</pubDate>
-      
-      <guid>http://www.example.com/tags/intro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>jupyter</title>
       <link>http://www.example.com/tags/jupyter/</link>
       <pubDate>Sun, 17 Mar 2019 11:30:07 -0700</pubDate>
@@ -33,6 +24,15 @@
       <pubDate>Sun, 17 Mar 2019 11:30:07 -0700</pubDate>
       
       <guid>http://www.example.com/tags/open-source-community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xkcd</title>
+      <link>http://www.example.com/tags/xkcd/</link>
+      <pubDate>Sat, 16 Mar 2019 17:36:11 -0700</pubDate>
+      
+      <guid>http://www.example.com/tags/xkcd/</guid>
       <description></description>
     </item>
     

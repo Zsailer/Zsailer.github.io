@@ -5,20 +5,10 @@
     <link>http://www.example.com/authors/zsailer/</link>
     <description>Recent content in zsailer on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Mar 2019 17:36:11 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 17 Mar 2019 11:30:07 -0700</lastBuildDate>
     
 	<atom:link href="http://www.example.com/authors/zsailer/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Introducing my new blog</title>
-      <link>http://www.example.com/other/first-post/</link>
-      <pubDate>Wed, 20 Mar 2019 17:36:11 -0700</pubDate>
-      
-      <guid>http://www.example.com/other/first-post/</guid>
-      <description>Finally starting a blog.
-Thank you to Letitia Portella and Saul Shanabrook for pushing me to make it happened.</description>
-    </item>
     
     <item>
       <title>Jupyter Team Meeting 2019</title>
@@ -30,6 +20,18 @@ Thank you to Letitia Portella and Saul Shanabrook for pushing me to make it happ
  A few weeks ago, I had the opportunity to join many members of the Project Jupyter&amp;rsquo;s core development team in Washington DC for our annual team meeting. A huge thank you to Dr. Lorena Barba for hosting our team at George Washington University for the week.
 This was an incredible experience.
 I counted ~20 core contributors representing 9 different countries in the room.</description>
+    </item>
+    
+    <item>
+      <title>Hello, world.</title>
+      <link>http://www.example.com/other/first-post/</link>
+      <pubDate>Sat, 16 Mar 2019 17:36:11 -0700</pubDate>
+      
+      <guid>http://www.example.com/other/first-post/</guid>
+      <description>Finally starting a blog. Thank you to Letitia Portella and Saul Shanabrook for pushing to make it happened.
+I&amp;rsquo;m planning to use this site to share three major types of content.
+ I&amp;rsquo;ll announce software that I&amp;rsquo;ve published or review software someone else published.
+ I&amp;rsquo;ll highlight things I come across in basic science and research domains. Since my background is in science, I&amp;rsquo;ll use this blog to stay connected to that community.</description>
     </item>
     
   </channel>
