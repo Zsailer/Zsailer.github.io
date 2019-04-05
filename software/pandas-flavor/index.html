@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Contents
+ Introduction: the case for Pandas extensions How to write a Pandas extension Extending Pandas with Pandas-flavor  Introduction: the case for Pandas extensions Pandas is Python&rsquo;s DataFrame library. There are many reasons why should be using DataFrame&rsquo;s in your data science workflow, but I&rsquo;ll have to leave that for another article. In this article, I&rsquo;ll show you how to tailor Pandas to your business, research, or personal workflow using Pandas&rsquo; extension API.'>
+<meta name='theme-color' content='#58879D'>
+
+<meta property='og:title' content='Writing your own flavor of Pandas • '>
+<meta property='og:description' content='Contents
+ Introduction: the case for Pandas extensions How to write a Pandas extension Extending Pandas with Pandas-flavor  Introduction: the case for Pandas extensions Pandas is Python&rsquo;s DataFrame library. There are many reasons why should be using DataFrame&rsquo;s in your data science workflow, but I&rsquo;ll have to leave that for another article. In this article, I&rsquo;ll show you how to tailor Pandas to your business, research, or personal workflow using Pandas&rsquo; extension API.'>
+<meta property='og:url' content='http://www.example.com/software/pandas-flavor/'>
+<meta property='og:site_name' content=''>
+<meta property='og:type' content='article'><meta property='article:section' content='software'><meta property='article:tag' content='pandas'><meta property='article:published_time' content='2019-03-17T11:30:07-07:00'/><meta property='article:modified_time' content='2019-03-17T11:30:07-07:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@zrsailer'>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+  <title>Writing your own flavor of Pandas • </title>
+  <link rel='canonical' href='http://www.example.com/software/pandas-flavor/'>
+  
+  
+  <link rel='icon' href='/favicon/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.4a10984a.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#58879D;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-137515270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+<body class='page type-software has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/headshot.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    Zach Sailer
+    </h2>
+    <div class='desc'>
+    open-source developer
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/jupyter/'>Jupyter</a></li><li class='item'>
+  <a href='/other/'>Other</a></li><li class='item'>
+  <a href='/science/'>Science</a></li><li class='item'>
+  <a href='/software/'>Software</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/jupyter/' style='font-size:1em'>jupyter</a>
+      </li><li>
+        <a href='/tags/open-source-community/' style='font-size:1em'>open-source community</a>
+      </li><li>
+        <a href='/tags/pandas/' style='font-size:1em'>pandas</a>
+      </li><li>
+        <a href='/tags/xkcd/' style='font-size:1em'>xkcd</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Home</a></li><li><a href='/software/'>Software</a></li><li><span>Writing your own flavor of Pandas</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'></p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Writing your own flavor of Pandas</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2019-03-17T11:30:07-07:00'>2019, Mar 17</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+5 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<p><strong>Contents</strong></p>
+
+<ul>
+<li><a href="#Introduction-the-case-for-Pandas-extensions">Introduction: the case for Pandas extensions</a></li>
+<li><a href="#How-to-write-a-Pandas-extension">How to write a Pandas extension</a></li>
+<li><a href="#Extending-Pandas-with-Pandas-flavor">Extending Pandas with Pandas-flavor</a></li>
+</ul>
+
+<h2 id="introduction-the-case-for-pandas-extensions">Introduction: the case for Pandas extensions</h2>
+
+<p>Pandas is Python&rsquo;s DataFrame library. There are many reasons why should be using DataFrame&rsquo;s in your data science workflow, but I&rsquo;ll have to leave that for another article. In this article, I&rsquo;ll show you how to tailor Pandas to your business, research, or personal workflow using Pandas&rsquo; extension API.</p>
+
+<p>Pandas is a powerful library. You can read data from various file types and manipulate and plot that using a highly memory-efficient data structure and API. It has become a foundational library in various scientific Python stacks and the <em>de facto</em> tool for data science in many companies and research institutions around the world.</p>
+
+<p>Pandas is also a general library. You&rsquo;ll find Pandas at various financial institutions, research institutions, classrooms, etc. To meet the needs of these many different domains, the core Pandas development team has worked hard to keep the API fairly general.</p>
+
+<p>Thus, Pandas does not (and should not) provide domain-specific functionality. I would wager that the core Pandas team has turned away many contributions from people who trieds to add functions for their special use-case. While these types of additions are great to see, they don&rsquo;t belong in the core Pandas API.</p>
+
+<p><em>So, where do my domain-specific additions belong?</em></p>
+
+<p>They belong in a <strong>Pandas extension</strong>. An extension is a separate piece of Python code, maybe an object or function, that <em>automatically</em> hooks into the Pandas API when imported.</p>
+
+<p>Let&rsquo;s imagine, for example, you&rsquo;re a financial consultant, and you&rsquo;ve developed a nice set of functions to analyze financial data into a Pandas DataFrame. This is a lot of work. You wrote your own  <code>read_portfolio</code> and <code>to_portfolio</code> functions to read/write your data, following Pandas&rsquo; API design. You have code that sets each column to the correct data-type. You&rsquo;ve formatted the date-time columns appropriately (I always have to look this up!). You have functions that slice out the capital gains for your clients. Maybe you even wrote some handy Matplotlib code to visualize your clients portfolio in a simple way.</p>
+
+<p><em>How do you share this code with others?</em> Clearly, this does not belong in the core Pandas library. A &ldquo;finance DataFrame&rdquo; only serves a small subset of Pandas users. However, your code follows Pandas&rsquo; API design and directly affects Pandas&rsquo; core objects. You want your users to treat this code like its &ldquo;Pandas for finance&rdquo; (or whatever domain you&rsquo;re in).</p>
+
+<p>That&rsquo;s when you should write a pandas extension. Here&rsquo;s what your Pandas extension might look like:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span>                      					<span style="color:#60a0b0;font-style:italic"># Import pandas</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas_finance</span>             					<span style="color:#60a0b0;font-style:italic"># Import your extension</span>
+
+df <span style="color:#666">=</span> pandas<span style="color:#666">.</span>DataFrame({            					<span style="color:#60a0b0;font-style:italic"># Create a DataFrame</span>
+    <span style="color:#4070a0">&#34;value&#34;</span>: [<span style="color:#40a070">5</span>, <span style="color:#666">-</span><span style="color:#40a070">5</span>, <span style="color:#40a070">45</span>, <span style="color:#40a070">65</span>, <span style="color:#40a070">30</span>]
+    <span style="color:#4070a0">&#34;gain_or_loss&#34;</span>: [<span style="color:#40a070">5</span>, <span style="color:#666">-</span><span style="color:#40a070">10</span>, <span style="color:#40a070">50</span>, <span style="color:#40a070">20</span>, <span style="color:#666">-</span><span style="color:#40a070">35</span>]
+})
+
+<span style="color:#60a0b0;font-style:italic"># Get rows with negative numbers in </span>
+<span style="color:#60a0b0;font-style:italic"># &#34;gain_or_loss&#34; column.</span>
+df<span style="color:#666">.</span>finance<span style="color:#666">.</span>get_losses()          					<span style="color:#60a0b0;font-style:italic"># That dataframe has a `finance` accessor.</span></code></pre></div>
+<p>By simply importing <code>pandas_finance</code> in the example above, the <code>pandas.DataFrame</code> has a <code>finance</code>  attribute (also called an &ldquo;accessor&rdquo;) and an extra method, <code>get_losses</code>. The user acts directly on their DataFrame. They can all the &ldquo;finance&rdquo; attribute, hit <em>tab</em>, and see all the special functions you&rsquo;ve added.</p>
+
+<p>Pandas extensions are meant to &ldquo;feel&rdquo; like Pandas code, even if they don&rsquo;t come from the core Pandas library. They live as separate Python packages that users can install and import. When they are imported, they automatically &ldquo;patch&rdquo; their custom functionality onto Pandas&rsquo; objects.</p>
+
+<p>There are many Pandas extensions that exist today. Here is a non-exhaustive list in case you&rsquo;re interested:</p>
+
+<ul>
+<li><a href="http://geopandas.org/" target="_blank">GeoPandas</a>: Pandas for geographic data and information.</li>
+<li><a href="https://github.com/Zsailer/phylopandas" target="_blank">PhyloPandas</a>: the Pandas DataFrame for phylogenetics.</li>
+<li><a href="https://altair-viz.github.io/pdvega/#" target="_blank">Pdvega</a>: Vega-lite plots from Pandas DataFrames.</li>
+<li><a href="https://github.com/ericmjl/pyjanitor" target="_blank">pyjanitor</a>: data &ldquo;cleaning&rdquo; API for Pandas DataFrames.</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html" target="_blank">Pandas&rsquo; <code>plot</code> API</a>: yes, this is part of Pandas&rsquo; core library, but acts like an extension.</li>
+</ul>
+
+<h2 id="how-to-write-a-pandas-extension">How to write a Pandas Extension.</h2>
+
+<p>I recommend you use the Python library, <a href="https://github.com/Zsailer/pandas_flavor" target="_blank">Pandas-flavor</a>; I&rsquo;ll explain why in a minute. (Full disclosure: I am the original creator of this library.)</p>
+
+<p>First, Pandas v0.24 introduced a new, simpler API for creating Pandas extensions. Essentially, it covered the boilerplate code for attaching extensions under the hood. It included two Python decorators: <code>register_dataframe_accessor</code> and <code>register_series_accessor</code>. Let me break down these magical functions.</p>
+
+<ul>
+<li>The &ldquo;<code>register</code>&rdquo; part acknowledges that these functions &ldquo;monkey-patch&rdquo; or add functionality to Pandas DataFrame or Series objects after Pandas has been imported.<br /></li>
+<li>An &ldquo;<code>accessor</code>&rdquo; is an object that attaches to a Pandas object that can access and &ldquo;mutate&rdquo; (i.e. change) the object. In the example above, the <code>finance</code> attribute is an accessor.</li>
+</ul>
+
+<p>As an example, let&rsquo;s create the finance extension above using  <code>register_dataframe_accessor</code>. We&rsquo;ll put this code inside a file named <code>pandas_finances.py</code>.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># Import pandas&#39;s extension API</span>
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pandas.api.extensions</span> <span style="color:#007020;font-weight:bold">import</span> register_dataframe_accessor
+
+<span style="color:#555;font-weight:bold">@register_dataframe_accessor</span>(<span style="color:#4070a0">&#34;finance&#34;</span>)
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">FinanceAccessor</span>:
+    <span style="color:#4070a0">&#34;&#34;&#34;Extra methods for finance dataframes.&#34;&#34;&#34;</span>
+    <span style="color:#007020;font-weight:bold">def</span> __init__(self, df):
+        self<span style="color:#666">.</span>_df <span style="color:#666">=</span> df
+        
+    <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">print_losses</span>(self):
+        <span style="color:#60a0b0;font-style:italic"># Slice out values less than 1.</span>
+        df <span style="color:#666">=</span> self<span style="color:#666">.</span>_df
+        losses <span style="color:#666">=</span> df[df[<span style="color:#4070a0">&#34;gains_and_losses&#34;</span>] <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>]
+        <span style="color:#007020;font-weight:bold">return</span> losses</code></pre></div>
+<p>When we import <code>pandas_finances</code> (like in the example before), a <code>finance</code> accessor will appear on all Pandas DataFrames in this session.</p>
+
+<p>To write such an extension, you&rsquo;ll need:</p>
+
+<ol>
+<li>To give the accessor a name, i.e. the DataFrame&rsquo;s attribute you&rsquo;ll call. You&rsquo;ll pass this name as an argument to the <code>register_dataframe_accessor</code>.</li>
+<li>To create an accessor class, a Python object. Name it whatever you like. It must have an <code>__init__</code> method whose only argument is the Pandas DataFrame (or Series, if using <code>register_series_accessor</code>).</li>
+<li>To store the Pandas object as a hidden attribute on the Accessor (prefix the attribute with an underscore); I suggest <code>self._df</code>.</li>
+<li>To add your methods and attributes as members of the Accessor class. You can access and mutate the dataframe by affecting the <code>self._df</code> attribute.</li>
+</ol>
+
+<p>That&rsquo;s it! You can start writing your own <strong>Pandas extension</strong> today!</p>
+
+<h2 id="extending-pandas-flavor">Extending Pandas-Flavor</h2>
+
+<p>As I mentioned, Pandas added this extension API in v0.24, which means this won&rsquo;t work with earlier versions of Pandas. That&rsquo;s one reason why I wrote <a href="https://github.com/Zsailer/pandas_flavor" target="_blank">Pandas-flavor</a>.</p>
+
+<p>Pandas-flavor backports this extension API to earlier versions of Pandas. You can import the same decorators, <code>register_dataframe_accessors</code> and <code>register_series_accessors</code> and it will work with most versions of Pandas. Just replace the the import statements above:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pandas_flavor</span> <span style="color:#007020;font-weight:bold">import</span> register_dataframe_accessor</code></pre></div>
+<p>Another reason I wrote Pandas-flavor is to</p>
+
+<p>[WIP]</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/pandas/'>pandas</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+
+<section id='comments' class='comments'>
+  <div class='container sep-before'>
+    <div class='comments-area'><div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "zsailer" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  </div>
+</section>
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/Zsailer' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/zrsailer' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:zachsailer@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/zach-sailer-8a1472151' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://scholar.google.com/citations?user=zpX45J8AAAAJ' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Google_scholar account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M21.328 2.002v9.2M8.695 7.85c.014-.787-.11-2.236.28-2.89.623-1.045.856-1.39 1.797-1.989 1.953-.988 4.296.692 4.296.692.803.564 1.672 2.1 1.672 2.1l1.368-1.824-5.444-1.754-3.515 1.34L6.08 7.681m9.109 3.42s.65-.633 1.168-1.085c.461-.402.516-.714.6-.914.18-.426.268-.909.268-1.446 0-.7-.131-1.274-.388-1.735-.031-.053 0 0-.097-.157l4.588-3.762H10.32L3.672 7.85l5.023-.024c.23 1.237.619 1.575 1.019 2.222.744.719 1.13 1.194 2.215 1.194.254 0 2.6-.057 2.842-.09 0 0 .546 1.199-.133 1.71-.41.31.576 1.304.576 1.304s-5.577.831-6.523 1.427a4.13 4.13 0 0 0-1.306 1.277 3.034 3.034 0 0 0-.493 1.665c0 .502.106.955.32 1.357.214.403.493.733.84.99.345.258.744.473 1.194.649.45.174.896.297 1.342.367a8.348 8.348 0 0 0 3.41-.166 7.754 7.754 0 0 0 1.964-.807 4.28 4.28 0 0 0 1.49-1.443c.38-.609.57-1.292.57-2.049 0-.574-.116-1.096-.347-1.57a3.755 3.755 0 0 0-.847-1.164c-.335-.302-2.19-1.837-2.19-1.837"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2019 Zachary Sailer </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__public_path__='\/assets\/js\/'</script>
+
+<script src='/assets/js/main.fae8ed32.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+
