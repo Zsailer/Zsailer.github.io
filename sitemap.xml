@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://www.example.com/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <lastmod>2019-04-05T11:30:07-07:00</lastmod>
   </url>
   
   <url>
@@ -23,16 +23,16 @@
   
   <url>
     <loc>http://www.example.com/software/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/jupyter/jupyter-team-meeting/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <lastmod>2019-04-05T11:30:07-07:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.example.com/software/pandas-flavor/</loc>
+    <lastmod>2019-04-05T11:30:07-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/jupyter/jupyter-team-meeting/</loc>
     <lastmod>2019-03-17T11:30:07-07:00</lastmod>
   </url>
   
@@ -84,7 +84,7 @@
   
   <url>
     <loc>http://www.example.com/tags/pandas/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <lastmod>2019-04-05T11:30:07-07:00</lastmod>
     <priority>0</priority>
   </url>
   
