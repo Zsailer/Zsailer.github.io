@@ -5,20 +5,10 @@
     <link>http://www.example.com/</link>
     <description>Recent content in Home on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Apr 2019 11:30:07 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 17 Mar 2019 11:30:07 -0700</lastBuildDate>
     
 	<atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Writing your own flavor of Pandas</title>
-      <link>http://www.example.com/software/pandas-flavor/</link>
-      <pubDate>Fri, 05 Apr 2019 11:30:07 -0700</pubDate>
-      
-      <guid>http://www.example.com/software/pandas-flavor/</guid>
-      <description>Contents
- Introduction: the case for Pandas extensions How to write a Pandas extension Extending Pandas with Pandas-flavor  Introduction: the case for Pandas extensions Pandas is Python&amp;rsquo;s DataFrame library. There are many reasons why should be using DataFrame&amp;rsquo;s in your data science workflow, but I&amp;rsquo;ll have to leave that for another article. In this article, I&amp;rsquo;ll show you how to tailor Pandas to your business, research, or personal workflow using Pandas&amp;rsquo; extension API.</description>
-    </item>
     
     <item>
       <title>Jupyter Team Meeting 2019</title>
