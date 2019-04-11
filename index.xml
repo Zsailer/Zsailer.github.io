@@ -5,10 +5,22 @@
     <link>http://www.example.com/</link>
     <description>Recent content in Home on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 17 Mar 2019 11:30:07 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 14:50:06 -0700</lastBuildDate>
     
 	<atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Should Jupyter Notebooks go away?</title>
+      <link>http://www.example.com/jupyter/notebook-communication/</link>
+      <pubDate>Thu, 11 Apr 2019 14:50:06 -0700</pubDate>
+      
+      <guid>http://www.example.com/jupyter/notebook-communication/</guid>
+      <description>Recently, there has been a lot of discussion on whether the hype around Jupyter Notebooks is deserved.
+Critics say that Notebooks are not actually good for software development. In fact, they actually encourage bad software engineering/development practices. This is a fair criticism, and I actually agree. (I recommend watching the talk, &amp;ldquo;I don&amp;rsquo;t like notebooks.&amp;rdquo; to hear some common criticisms).
+The dominant counter argument I hear is&amp;ndash;
+ The interactivity offered by Notebooks is a &amp;ldquo;net win&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Jupyter Team Meeting 2019</title>

@@ -4,12 +4,12 @@
   
   <url>
     <loc>http://www.example.com/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <lastmod>2019-04-11T14:50:06-07:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.example.com/jupyter/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <lastmod>2019-04-11T14:50:06-07:00</lastmod>
   </url>
   
   <url>
@@ -23,6 +23,11 @@
   
   <url>
     <loc>http://www.example.com/software/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/jupyter/notebook-communication/</loc>
+    <lastmod>2019-04-11T14:50:06-07:00</lastmod>
   </url>
   
   <url>
@@ -66,7 +71,13 @@
   
   <url>
     <loc>http://www.example.com/tags/jupyter/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <lastmod>2019-04-11T14:50:06-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/notebooks/</loc>
+    <lastmod>2019-04-11T14:50:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,7 +95,7 @@
   
   <url>
     <loc>http://www.example.com/authors/zsailer/</loc>
-    <lastmod>2019-03-17T11:30:07-07:00</lastmod>
+    <lastmod>2019-04-11T14:50:06-07:00</lastmod>
     <priority>0</priority>
   </url>
   

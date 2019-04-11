@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jupyter on </title>
-    <link>http://www.example.com/jupyter/</link>
-    <description>Recent content in Jupyter on </description>
+    <title>notebooks on </title>
+    <link>http://www.example.com/tags/notebooks/</link>
+    <description>Recent content in notebooks on </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 11 Apr 2019 14:50:06 -0700</lastBuildDate>
     
-	<atom:link href="http://www.example.com/jupyter/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.example.com/tags/notebooks/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,18 +20,6 @@
 Critics say that Notebooks are not actually good for software development. In fact, they actually encourage bad software engineering/development practices. This is a fair criticism, and I actually agree. (I recommend watching the talk, &amp;ldquo;I don&amp;rsquo;t like notebooks.&amp;rdquo; to hear some common criticisms).
 The dominant counter argument I hear is&amp;ndash;
  The interactivity offered by Notebooks is a &amp;ldquo;net win&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Jupyter Team Meeting 2019</title>
-      <link>http://www.example.com/jupyter/jupyter-team-meeting/</link>
-      <pubDate>Sun, 17 Mar 2019 11:30:07 -0700</pubDate>
-      
-      <guid>http://www.example.com/jupyter/jupyter-team-meeting/</guid>
-      <description>&amp;ldquo;If you want to go fast, go alone. If you want to go far, go together.&amp;rdquo;
- A few weeks ago, I had the opportunity to join many members of the Project Jupyter&amp;rsquo;s core development team in Washington DC for our annual team meeting. A huge thank you to Dr. Lorena Barba for hosting our team at George Washington University for the week.
-This was an incredible experience.
-I counted ~20 core contributors representing 9 different countries in the room.</description>
     </item>
     
   </channel>
