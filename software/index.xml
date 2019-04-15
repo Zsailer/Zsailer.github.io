@@ -5,9 +5,20 @@
     <link>http://www.example.com/software/</link>
     <description>Recent content in Software on </description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 14 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.example.com/software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Writing your own flavor of Pandas</title>
+      <link>http://www.example.com/software/pandas-flavor/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/software/pandas-flavor/</guid>
+      <description>Pandas is Python&amp;rsquo;s DataFrame library. There are many reasons why should be using DataFrame&amp;rsquo;s in your data science workflow, but I&amp;rsquo;ll have to leave that for another post. Here, I&amp;rsquo;ll show you how to tailor Pandas to your business, research, or personal workflow using Pandas&amp;rsquo; extension API.
+In versions 0.24.x, Pandas introduced a new API for extending Pandas. This API handled the boilerplate code for registering custom accessors onto Pandas objects.</description>
+    </item>
     
   </channel>
 </rss>

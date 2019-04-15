@@ -37,6 +37,24 @@
     </item>
     
     <item>
+      <title>pandas</title>
+      <link>http://www.example.com/tags/pandas/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>http://www.example.com/tags/software/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>xkcd</title>
       <link>http://www.example.com/tags/xkcd/</link>
       <pubDate>Sat, 16 Mar 2019 17:36:11 -0700</pubDate>
