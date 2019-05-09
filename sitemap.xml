@@ -19,7 +19,7 @@
   
   <url>
     <loc>http://www.example.com/other/</loc>
-    <lastmod>2019-03-16T17:36:11-07:00</lastmod>
+    <lastmod>2019-05-09T14:59:21-07:00</lastmod>
   </url>
   
   <url>
@@ -29,6 +29,11 @@
   <url>
     <loc>http://www.example.com/software/</loc>
     <lastmod>2019-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/other/writing/</loc>
+    <lastmod>2019-05-09T14:59:21-07:00</lastmod>
   </url>
   
   <url>
@@ -118,6 +123,12 @@
   </url>
   
   <url>
+    <loc>http://www.example.com/tags/writing/</loc>
+    <lastmod>2019-05-09T14:59:21-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.example.com/tags/xkcd/</loc>
     <lastmod>2019-03-16T17:36:11-07:00</lastmod>
     <priority>0</priority>
@@ -125,7 +136,7 @@
   
   <url>
     <loc>http://www.example.com/authors/zsailer/</loc>
-    <lastmod>2019-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T14:59:21-07:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Other on This sample size equals one</title>
-    <link>http://www.example.com/other/</link>
-    <description>Recent content in Other on This sample size equals one</description>
+    <title>writing on This sample size equals one</title>
+    <link>http://www.example.com/tags/writing/</link>
+    <description>Recent content in writing on This sample size equals one</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 09 May 2019 14:59:21 -0700</lastBuildDate>
     
-	<atom:link href="http://www.example.com/other/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.example.com/tags/writing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,18 +20,6 @@
  There’s a lot of “not writing” that happens in the early stages of writing.
  While that’s probably obvious to more seasoned writers, it’s something I’m just now realizing has been a road block for me.
 It takes time to formulate thoughts, reason through ideas, articulate concepts and put them down on a page. As a result, that page stays blank for a long time (or gets littered with useless fragments).</description>
-    </item>
-    
-    <item>
-      <title>Hello, world.</title>
-      <link>http://www.example.com/other/first-post/</link>
-      <pubDate>Sat, 16 Mar 2019 17:36:11 -0700</pubDate>
-      
-      <guid>http://www.example.com/other/first-post/</guid>
-      <description>Finally starting a blog. Thank you to Leticia Portella and Saul Shanabrook for pushing to make it happened.
-I&amp;rsquo;m planning to use this site to share three major types of content.
- I&amp;rsquo;ll announce software that I&amp;rsquo;ve published or review software someone else published.
- I&amp;rsquo;ll highlight things I come across in basic science and research domains. Since my background is in science, I&amp;rsquo;ll use this blog to stay connected to that community.</description>
     </item>
     
   </channel>
