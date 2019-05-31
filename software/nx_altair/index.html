@@ -2,23 +2,21 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Recently, there has been a lot of discussion on whether the hype around Jupyter Notebooks is deserved.
-Critics say that Notebooks are bad for software development. They actually encourage a lot of bad practices and confuse people who are learning to program. This is a fair criticism, and I mostly agree. (I recommend watching the talk, &ldquo;I don&rsquo;t like notebooks.&rdquo; to hear some common criticisms).
-The dominant counter argument I hear is&ndash;'>
+<meta name='description' content='NxAltair is a small library I created last year to draw NetworkX graphs in Altair. Altair is a declarative Python API for creating interactive visualizations powered by Vega. NetworkX is a broadly used library for analyzing network data.
+NetworkX comes with a simple but powerful drawing API out-of-the-box. It&rsquo;s built on Matplotlib and allows you to customize the drawing of nodes, edges, and labels separately. One major downside of using Matplotlib here is that the figure is static.'>
 <meta name='theme-color' content='#58879D'>
 
-<meta property='og:title' content='Should Jupyter Notebooks go away? • Zach Sailer'>
-<meta property='og:description' content='Recently, there has been a lot of discussion on whether the hype around Jupyter Notebooks is deserved.
-Critics say that Notebooks are bad for software development. They actually encourage a lot of bad practices and confuse people who are learning to program. This is a fair criticism, and I mostly agree. (I recommend watching the talk, &ldquo;I don&rsquo;t like notebooks.&rdquo; to hear some common criticisms).
-The dominant counter argument I hear is&ndash;'>
-<meta property='og:url' content='http://www.example.com/jupyter/notebook-communication/'>
+<meta property='og:title' content='NetworkX meets Altair • Zach Sailer'>
+<meta property='og:description' content='NxAltair is a small library I created last year to draw NetworkX graphs in Altair. Altair is a declarative Python API for creating interactive visualizations powered by Vega. NetworkX is a broadly used library for analyzing network data.
+NetworkX comes with a simple but powerful drawing API out-of-the-box. It&rsquo;s built on Matplotlib and allows you to customize the drawing of nodes, edges, and labels separately. One major downside of using Matplotlib here is that the figure is static.'>
+<meta property='og:url' content='http://www.example.com/software/nx_altair/'>
 <meta property='og:site_name' content='All opinions are a sample size of one'>
-<meta property='og:type' content='article'><meta property='og:image' content='http://www.example.com/path/to/picture'><meta property='article:section' content='jupyter'><meta property='article:tag' content='jupyter'><meta property='article:tag' content='notebooks'><meta property='article:tag' content='python'><meta property='article:published_time' content='2019-04-11T14:50:06-07:00'/><meta property='article:modified_time' content='2019-04-11T14:50:06-07:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@zrsailer'><meta name='twitter:creator' content='@zrsailer'>
+<meta property='og:type' content='article'><meta property='og:image' content='http://www.example.com/software/nx_altair/data/networkx-mpl.png'><meta property='article:section' content='software'><meta property='article:tag' content='software'><meta property='article:tag' content='pandas'><meta property='article:tag' content='networkx'><meta property='article:tag' content='altair'><meta property='article:published_time' content='2019-05-31T00:00:00Z'/><meta property='article:modified_time' content='2019-05-31T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@zrsailer'><meta name='twitter:creator' content='@zrsailer'>
 
 <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>Should Jupyter Notebooks go away? • Zach Sailer</title>
-  <link rel='canonical' href='http://www.example.com/jupyter/notebook-communication/'>
+  <title>NetworkX meets Altair • Zach Sailer</title>
+  <link rel='canonical' href='http://www.example.com/software/nx_altair/'>
   
   
   <link rel='icon' href='/favicon/favicon.ico'>
@@ -53,7 +51,7 @@ if (!doNotTrack) {
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
 </head>
-<body class='page type-jupyter has-sidebar'>
+<body class='page type-software has-sidebar'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -205,7 +203,7 @@ if (!doNotTrack) {
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-      <ol><li><a href='/'>Home</a></li><li><a href='/jupyter/'>Jupyter</a></li><li><span>Should Jupyter Notebooks go away?</span></li></ol>
+      <ol><li><a href='/'>Home</a></li><li><a href='/software/'>Software</a></li><li><span>NetworkX meets Altair</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -224,7 +222,7 @@ if (!doNotTrack) {
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Should Jupyter Notebooks go away?</h1>
+      <h1 class='title'>NetworkX meets Altair</h1>
       
 
     </div>
@@ -238,7 +236,7 @@ if (!doNotTrack) {
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2019-04-11T14:50:06-07:00'>2019, Apr 11</time>
+  <time class='entry-date' datetime='2019-05-31T00:00:00Z'>2019, May 31</time>
 </span>
 
   <span class='byline'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
@@ -255,7 +253,7 @@ if (!doNotTrack) {
   <polyline points="12 6 12 12 15 15"/>
   
 </svg>
-2 mins read
+3 mins read
 </span>
 
 
@@ -269,25 +267,143 @@ if (!doNotTrack) {
   
 
   <div class='container entry-content'>
-  <p>Recently, there has been a lot of discussion on whether the hype around Jupyter Notebooks is deserved.</p>
+  
 
-<p>Critics say that Notebooks are <em>bad</em> for software development. They actually encourage a lot of bad practices and confuse people who are learning to program. This is a fair criticism, and I <em>mostly</em> agree. (I recommend watching the talk, <a href="https://www.youtube.com/watch?v=7jiPeIFXb6U" target="_blank">&ldquo;I don&rsquo;t like notebooks.&rdquo;</a> to hear some common criticisms).</p>
+<p><strong>NxAltair</strong> is a small library I created last year to draw NetworkX graphs in Altair. <a href="https://altair-viz.github.io/" target="_blank">Altair</a> is a declarative Python API for creating interactive visualizations powered by Vega. <a href="https://networkx.github.io/" target="_blank">NetworkX</a> is a broadly used library for analyzing network data.</p>
 
-<p>The dominant counter argument I hear is&ndash;</p>
+<p>NetworkX comes with a simple but powerful drawing API out-of-the-box. It&rsquo;s built on Matplotlib and allows you to customize the drawing of nodes, edges, and labels separately. One major downside of using Matplotlib here is that the figure is <em>static</em>. To explore the data further, we would need to re-render the figure in a different configuration.</p>
 
-<blockquote>
-<p>The <em>interactivity</em> offered by Notebooks is a &ldquo;net win&rdquo;. New programmers can execute small bits of code and get instant feedback. Old programmers can prototype code more flexibly. Scientists can explore data freely.</p>
-</blockquote>
+<h2 id="interactivity-for-free">Interactivity for Free</h2>
 
-<p>While all these things are true, I think we&rsquo;re missing the biggest &ldquo;win&rdquo;.</p>
+<p>NxAltair brings simple interactivity that is particularly useful for analyzing networks. I&rsquo;ll demonstrate this with examples. Here is a simple NetworkX example using the <code>draw_networkx</code> function:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">networkx</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">nx</span>
 
-<p>I am constantly surprised by the diversity of Jupyter&rsquo;s users. I&rsquo;ve met Jovyans from all different backgrounds: psychology, kinesiology, sociology, journalism, political science, engineering, chemistry, physics, biology, economics, medicine, aviation, &hellip; the list goes on. What is it about Notebooks that attracts such a general audience?</p>
+<span style="color:#60a0b0;font-style:italic"># Generate a random graph</span>
+G <span style="color:#666">=</span> nx<span style="color:#666">.</span>fast_gnp_random_graph(n<span style="color:#666">=</span><span style="color:#40a070">20</span>, p<span style="color:#666">=</span><span style="color:#40a070">0.25</span>)
 
-<p>I believe it&rsquo;s because Jupyter Notebooks <strong>innovate how we communicate</strong>. They use a familiar interface&mdash;a word-processor document&mdash;and add to it interactive computation and visualization. If you&rsquo;re not a programmer, &ldquo;reading&rdquo; a Jupyter Notebook doesn&rsquo;t feel too foreign to you. The rendered markdown cells look like regular text. Math equations look like your college textbooks. The inline plots make the document look like science or news articles. Sure&mdash;there&rsquo;s some code in there. But, even the code is <em>almost</em> digestable. (<em>Thanks, Python</em>!)</p>
+<span style="color:#60a0b0;font-style:italic"># Add store some random attributes on each node.</span>
+<span style="color:#007020;font-weight:bold">for</span> n <span style="color:#007020;font-weight:bold">in</span> G<span style="color:#666">.</span>nodes():
+    G<span style="color:#666">.</span>nodes[n][<span style="color:#4070a0">&#39;weight&#39;</span>] <span style="color:#666">=</span> np<span style="color:#666">.</span>random<span style="color:#666">.</span>randn()
+    G<span style="color:#666">.</span>nodes[n][<span style="color:#4070a0">&#39;name&#39;</span>] <span style="color:#666">=</span> np<span style="color:#666">.</span>random<span style="color:#666">.</span>randint(<span style="color:#40a070">1000</span>)
+    G<span style="color:#666">.</span>nodes[n][<span style="color:#4070a0">&#39;viable&#39;</span>] <span style="color:#666">=</span> np<span style="color:#666">.</span>random<span style="color:#666">.</span>choice([<span style="color:#4070a0">&#39;yes&#39;</span>, <span style="color:#4070a0">&#39;no&#39;</span>])
 
-<p>Jupyter Notebooks can do many things that other literary mediums cannot. They seamlessly integrate more rich elements with classic text&mdash;weaving inline interactive plots, maps, data explorers, tables, dashboards, etc. Authors are no longer limited to the static nature of classic word processors; they can leverage interactivity and flexibility that&rsquo;s only possible in computational documents. This allows authors to raise their level of communication to the height of innovation that notebooks offer.</p>
+<span style="color:#60a0b0;font-style:italic"># Compute positions for viz.</span>
+pos <span style="color:#666">=</span> nx<span style="color:#666">.</span>spring_layout(G)
 
-<p>This is why we need Jupyter Notebooks. They expand the world&rsquo;s communication toolkit. I agree that Jupyter Notebooks may be not an ideal tool for software developers, but they are an innovative tool for story tellers.</p>
+<span style="color:#60a0b0;font-style:italic"># Draw the graph using matplotlib</span>
+chart <span style="color:#666">=</span> nx<span style="color:#666">.</span>draw_networkx(G, pos<span style="color:#666">=</span>pos)</code></pre></div>
+<p><img src="/software/nx_altair/data/networkx-mpl.png" alt="" /></p>
+
+<p>If we replace NetworkX&rsquo;s draw method with NxAltair&rsquo;s, we get an Altair chart. And calling <code>.interactive()</code> adds &ldquo;pan and zoom&rdquo;.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># Import NxAltair</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">nx_altair</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">nxa</span>
+
+<span style="color:#60a0b0;font-style:italic"># Swap nx with nxa.</span>
+chart <span style="color:#666">=</span> nxa<span style="color:#666">.</span>draw_networkx(G, pos<span style="color:#666">=</span>pos)
+
+<span style="color:#60a0b0;font-style:italic"># Add pan and zoom!</span>
+chart<span style="color:#666">.</span>interactive()</code></pre></div>
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = "data/chart1.json";
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<p>This is already useful for network figures that are crowded by many nodes and edges. We can zoom on regions of interest. But the interactivity doesn&rsquo;t stop there&hellip;</p>
+
+<h2 id="altair-level-interactivity">Altair-level interactivity</h2>
+
+<p>Because NxAltair returns Altair charts, we can leverage most of the features inside of Altair. For example, we easily add tool-tips to label our nodes — hover over any node and quickly view its data:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># Set the node_tooltip argument.</span>
+chart <span style="color:#666">=</span> nxa<span style="color:#666">.</span>draw_networkx(
+    G, pos<span style="color:#666">=</span>pos,
+    node_tooltip<span style="color:#666">=</span>[<span style="color:#4070a0">&#34;name&#34;</span>, <span style="color:#4070a0">&#34;weight&#34;</span>, <span style="color:#4070a0">&#34;viable&#34;</span>]
+)<span style="color:#666">.</span>interactive()</code></pre></div>
+<div id="vis2"></div>
+
+<script type="text/javascript">
+  var spec = "data/chart2.json";
+  vegaEmbed('#vis2', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<p>NxAltair also has a feature not available in NetworkX. It can style the visualization using node and edge attributes. The values of those attributes are mapped onto properties of the visualization. For example, here we use the nodes &ldquo;weight&rdquo; attribute to color the nodes:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chart <span style="color:#666">=</span> nxa<span style="color:#666">.</span>draw_networkx(
+    G<span style="color:#666">=</span>G,
+    pos<span style="color:#666">=</span>pos,
+    node_size<span style="color:#666">=</span><span style="color:#40a070">200</span>,
+    node_color<span style="color:#666">=</span><span style="color:#4070a0">&#39;weight&#39;</span>,
+    cmap<span style="color:#666">=</span><span style="color:#4070a0">&#39;viridis&#39;</span>,
+    width<span style="color:#666">=</span><span style="color:#4070a0">&#39;weight&#39;</span>,
+)<span style="color:#666">.</span>interactive()</code></pre></div>
+<div id="vis3"></div>
+
+<script type="text/javascript">
+  var spec = "data/chart3.json";
+  vegaEmbed('#vis3', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+This is particularly handy in XX.
+
+
+```python
+# Draw a basic chart
+chart = nxa.draw_networkx(
+    G, pos=pos,
+)
+
+# Get the node layer
+edges = chart.layer[0]
+nodes = chart.layer[1]
+
+# Build a brush
+brush = alt.selection_interval(encodings=['x', 'y'])
+color = alt.Color('viable:N',  legend=None)
+
+# Condition nodes based on brush
+nodes = nodes.encode(
+    fill=alt.condition(brush, color, alt.value('gray')),
+).add_selection(
+    brush
+)
+
+# Create a bar graph to show highlighted nodes.
+bars = alt.Chart(nodes.data).mark_bar().encode(
+    x=alt.X('count()', scale=alt.Scale(domain=(0,20))),
+    y='viable',
+    color='viable',
+).transform_filter(
+    brush
+)
+
+alt.vconcat(edges+nodes, bars)
+```
+
+<div id="vis4"></div>
+
+<script type="text/javascript">
+  var spec = "data/chart4.json";
+  vegaEmbed('#vis4', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<h2 id="api-design-may-delete">API Design (may delete)</h2>
+
+<p>I followed three requirements when building NXAltair:</p>
+
+<ol>
+<li>Build an API that&rsquo;s as close to NetworkX as possible</li>
+<li>Return Altair <code>Chart</code>s that can be easily customized using Altair&rsquo;s API.</li>
+<li>Allow users to declare attributes as visual features.</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
 
 </div>
 
@@ -299,7 +415,7 @@ if (!doNotTrack) {
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/jupyter/'>jupyter</a>, <a class='tag' href='/tags/notebooks/'>notebooks</a>, <a class='tag' href='/tags/python/'>python</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/software/'>software</a>, <a class='tag' href='/tags/pandas/'>pandas</a>, <a class='tag' href='/tags/networkx/'>networkx</a>, <a class='tag' href='/tags/altair/'>altair</a></div>
 
   </div>
 </footer>
@@ -309,7 +425,7 @@ if (!doNotTrack) {
 
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
-      <a href='/jupyter/jupyter-team-meeting/'>
+      <a href='/software/pandas-flavor/'>
         <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="20" y1="12" x2="4" y2="12"/>
@@ -317,7 +433,7 @@ if (!doNotTrack) {
   
 </svg>
  Previous</span>
-        <span class='screen-reader-text'>Previous post: </span>Jupyter Team Meeting 2019</a>
+        <span class='screen-reader-text'>Previous post: </span>Writing your own flavor of Pandas</a>
     </div></div>
 </nav>
 

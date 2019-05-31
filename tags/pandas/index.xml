@@ -5,10 +5,20 @@
     <link>http://www.example.com/tags/pandas/</link>
     <description>Recent content in pandas on All opinions are a sample size of one</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.example.com/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NetworkX meets Altair</title>
+      <link>http://www.example.com/software/nx_altair/</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/software/nx_altair/</guid>
+      <description>NxAltair is a small library I created last year to draw NetworkX graphs in Altair. Altair is a declarative Python API for creating interactive visualizations powered by Vega. NetworkX is a broadly used library for analyzing network data.
+NetworkX comes with a simple but powerful drawing API out-of-the-box. It&amp;rsquo;s built on Matplotlib and allows you to customize the drawing of nodes, edges, and labels separately. One major downside of using Matplotlib here is that the figure is static.</description>
+    </item>
     
     <item>
       <title>Writing your own flavor of Pandas</title>
