@@ -28,12 +28,7 @@
   
   <url>
     <loc>http://www.example.com/software/</loc>
-    <lastmod>2019-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/software/nx_altair/</loc>
-    <lastmod>2019-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -92,20 +87,8 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/tags/altair/</loc>
-    <lastmod>2019-05-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://www.example.com/tags/jupyter/</loc>
     <lastmod>2019-04-11T14:50:06-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/tags/networkx/</loc>
-    <lastmod>2019-05-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -123,7 +106,7 @@
   
   <url>
     <loc>http://www.example.com/tags/pandas/</loc>
-    <lastmod>2019-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -135,7 +118,7 @@
   
   <url>
     <loc>http://www.example.com/tags/software/</loc>
-    <lastmod>2019-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -153,7 +136,7 @@
   
   <url>
     <loc>http://www.example.com/authors/zsailer/</loc>
-    <lastmod>2019-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T14:59:21-07:00</lastmod>
     <priority>0</priority>
   </url>
   

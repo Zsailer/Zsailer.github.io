@@ -10,29 +10,11 @@
     
     
     <item>
-      <title>altair</title>
-      <link>http://www.example.com/tags/altair/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.example.com/tags/altair/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>jupyter</title>
       <link>http://www.example.com/tags/jupyter/</link>
       <pubDate>Thu, 11 Apr 2019 14:50:06 -0700</pubDate>
       
       <guid>http://www.example.com/tags/jupyter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>networkx</title>
-      <link>http://www.example.com/tags/networkx/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.example.com/tags/networkx/</guid>
       <description></description>
     </item>
     
@@ -57,7 +39,7 @@
     <item>
       <title>pandas</title>
       <link>http://www.example.com/tags/pandas/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://www.example.com/tags/pandas/</guid>
       <description></description>
@@ -75,7 +57,7 @@
     <item>
       <title>software</title>
       <link>http://www.example.com/tags/software/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://www.example.com/tags/software/</guid>
       <description></description>
